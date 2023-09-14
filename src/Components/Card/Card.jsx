@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import SingleCard from "../SingleCard/SingleCard";
 import Cart from "../Cart/Cart";
+import { ToastContainer, toast } from "react-toastify";
+
+import "react-toastify/dist/ReactToastify.css";
 
 const Card = ({ catagoryData }) => {
   const [seletedData, setSeletedData] = useState([]);
@@ -21,11 +24,36 @@ const Card = ({ catagoryData }) => {
       let temPrice = totalPriceOnCart;
       temPrice = temPrice + Number(data.price);
       setTotalPriceOnCart(temPrice);
+    } else {
+      toast.error("🦄 Wow so easy!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "colored",
+      });
     }
   };
 
   return (
     <div>
+      <div>
+        <ToastContainer
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+        />
+      </div>
       <div className="container flex mx-auto my-3 gap-2">
         <div className="flex-1 ">
           <div className="grid grid-cols-3 gap-2">
