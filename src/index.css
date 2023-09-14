@@ -5,3 +5,12 @@
 body {
   font-family: "Inter", sans-serif;
 }
+.ok {
+  color: #1c1b1bcc;
+  text-align: center;
+  font-family: Inter;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
