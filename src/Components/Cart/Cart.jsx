@@ -1,12 +1,11 @@
 import React from "react";
 
-const Cart = ({ seletedData }) => {
-  console.log(seletedData);
+const Cart = ({ seletedData, creditOnCart, totalPriceOnCart }) => {
   return (
     <div>
       <div className=" bg-[#f3f3f3]  w-[350px] p-5 rounded-xl">
         <h3 className="text-xl font-bold  text-[#2F80ED]">
-          Credit Hour Remaining 7 hr
+          Credit Hour Remaining {20 - creditOnCart} hr
         </h3>
         <hr className="w-11/12 my-3" />
 
@@ -23,11 +22,11 @@ const Cart = ({ seletedData }) => {
         </ul>
         <hr className="w-11/12 my-3" />
         <p className="text-[#1c1b1bcc] text-base font-medium">
-          Total Credit Hour : 13
+          Total Credit Hour : {creditOnCart}
         </p>
         <hr className="w-11/12 my-3" />
         <p className="text-[#1c1b1bcc] text-base font-semibold">
-          Total Price : 48000 USD
+          Total Price : {totalPriceOnCart} USD
         </p>
       </div>
     </div>

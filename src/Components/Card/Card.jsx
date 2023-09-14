@@ -4,6 +4,8 @@ import Cart from "../Cart/Cart";
 
 const Card = ({ catagoryData }) => {
   const [seletedData, setSeletedData] = useState([]);
+  const [creditOnCart, setCreditOnCart] = useState(0);
+  const [totalPriceOnCart, setTotalPriceOnCart] = useState(0);
 
   const handleCorseName = (data) => {
     const temData = [...seletedData];
@@ -12,6 +14,13 @@ const Card = ({ catagoryData }) => {
       temData.push(data);
 
       setSeletedData(temData);
+      let temCredit = creditOnCart;
+      temCredit = temCredit + Number(data.credit);
+      setCreditOnCart(temCredit);
+
+      let temPrice = totalPriceOnCart;
+      temPrice = temPrice + Number(data.price);
+      setTotalPriceOnCart(temPrice);
     }
   };
 
@@ -30,7 +39,11 @@ const Card = ({ catagoryData }) => {
           </div>
         </div>
 
-        <Cart seletedData={seletedData}></Cart>
+        <Cart
+          seletedData={seletedData}
+          totalPriceOnCart={totalPriceOnCart}
+          creditOnCart={creditOnCart}
+        ></Cart>
       </div>
     </div>
   );

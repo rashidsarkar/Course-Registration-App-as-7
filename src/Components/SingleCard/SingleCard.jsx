@@ -3,7 +3,7 @@ import React from "react";
 import { LuDollarSign } from "react-icons/Lu";
 import { GoBook } from "react-icons/Go";
 
-const SingleCard = ({ catagoryData, handleCorseName }) => {
+const SingleCard = ({ catagoryData, handleCorseName, handleCredit }) => {
   const { title, price, credit, description, image_url } = catagoryData;
   // console.log(image_url);
 
@@ -33,11 +33,13 @@ const SingleCard = ({ catagoryData, handleCorseName }) => {
           </div>
           <div className="creadit flex">
             <GoBook className="text-2xl mr-2"></GoBook>
-            <h3>Credit : 1hr</h3>
+            <h3>Credit : {credit}hr</h3>
           </div>
         </div>
         <button
-          onClick={() => handleCorseName(catagoryData)}
+          onClick={() => {
+            handleCorseName(catagoryData);
+          }}
           className="btn btn-info w-[275px] text-white absolute bottom-4"
         >
           Select
