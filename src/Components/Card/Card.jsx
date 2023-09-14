@@ -24,6 +24,20 @@ const Card = ({ catagoryData }) => {
         let temPrice = totalPriceOnCart;
         temPrice = temPrice + Number(data.price);
         setTotalPriceOnCart(temPrice);
+      } else {
+        toast.error(
+          "Credit limit exceeded. You cannot use more than 20 credits.",
+          {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "colored",
+          }
+        );
       }
     } else {
       toast.error(
