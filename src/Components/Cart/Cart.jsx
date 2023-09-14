@@ -1,6 +1,7 @@
 import React from "react";
 
-const Cart = () => {
+const Cart = ({ seletedData }) => {
+  console.log(seletedData);
   return (
     <div>
       <div className=" bg-[#f3f3f3]  w-[350px] p-5 rounded-xl">
@@ -11,9 +12,14 @@ const Cart = () => {
 
         <h2 className="text-xl font-bold mb-3">Course Name</h2>
         <ul className="list-decimal">
-          <li className="relative left-[19px] text-base text-[#1c1b1b99]">
-            Introduction to c programming
-          </li>
+          {seletedData.map((item, idx) => (
+            <li
+              key={idx}
+              className="relative left-[19px] text-base text-[#1c1b1b99]"
+            >
+              {item.title}
+            </li>
+          ))}
         </ul>
         <hr className="w-11/12 my-3" />
         <p className="text-[#1c1b1bcc] text-base font-medium">
