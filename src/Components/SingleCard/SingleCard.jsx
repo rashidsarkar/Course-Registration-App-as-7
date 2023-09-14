@@ -14,19 +14,19 @@ const SingleCard = ({ catagoryData }) => {
           <div className="mx-auto">
             <div className=" w-[270px]">
               <img
-                className="rounded-xl h-[205px] relative"
+                className="rounded-xl w-[280px] h-[144px] relative"
                 src={image_url}
                 alt=""
               />
             </div>
 
             <div>
-              <h2 className="text-lg font-semibold mt-2">{title}</h2>
+              <h2 className="text-lg font-semibold my-4">{title}</h2>
               <p className="text-sm mb-3 text-[#1c1b1b99]">{description}</p>
             </div>
           </div>
         </div>
-        <div className="flex gap-5 mb-3 absolute bottom-[71px] ">
+        <div className="flex gap-5 mb-3 absolute bottom-[93px] ">
           <div className="icons flex">
             <LuDollarSign className="text-2xl mr-2" />
             <h3>Price : {price}</h3>
