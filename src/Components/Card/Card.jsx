@@ -14,16 +14,17 @@ const Card = ({ catagoryData }) => {
     const temData = [...seletedData];
     const newData = seletedData.find((item) => item.title === data.title);
     if (!newData) {
-      temData.push(data);
+      if (creditOnCart + Number(data.credit) <= 20) {
+        let temCredit = creditOnCart;
+        temCredit = temCredit + Number(data.credit);
+        setCreditOnCart(temCredit);
+        temData.push(data);
+        setSeletedData(temData);
 
-      setSeletedData(temData);
-      let temCredit = creditOnCart;
-      temCredit = temCredit + Number(data.credit);
-      setCreditOnCart(temCredit);
-
-      let temPrice = totalPriceOnCart;
-      temPrice = temPrice + Number(data.price);
-      setTotalPriceOnCart(temPrice);
+        let temPrice = totalPriceOnCart;
+        temPrice = temPrice + Number(data.price);
+        setTotalPriceOnCart(temPrice);
+      }
     } else {
       toast.error(
         "This course has already been selected. Please choose another course.",
