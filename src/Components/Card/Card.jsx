@@ -7,8 +7,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Card = ({ catagoryData }) => {
   const [seletedData, setSeletedData] = useState([]);
-  const [creditOnCart, setCreditOnCart] = useState(0);
   const [totalPriceOnCart, setTotalPriceOnCart] = useState(0);
+  const [creditOnCart, setCreditOnCart] = useState(0);
 
   const handleCorseName = (data) => {
     const temData = [...seletedData];
@@ -72,7 +72,7 @@ const Card = ({ catagoryData }) => {
           theme="colored"
         />
       </div>
-      <div className="container flex mx-auto my-3 gap-2">
+      <div className="container flex gap-2 mx-auto my-3">
         <div className="flex-1 ">
           <div className="grid grid-cols-3 gap-2">
             {catagoryData.map((item, idx) => (

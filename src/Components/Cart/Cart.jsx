@@ -1,5 +1,3 @@
-import React from "react";
-
 const Cart = ({ seletedData, creditOnCart, totalPriceOnCart }) => {
   return (
     <div>
@@ -9,7 +7,7 @@ const Cart = ({ seletedData, creditOnCart, totalPriceOnCart }) => {
         </h3>
         <hr className="w-11/12 my-3" />
 
-        <h2 className="text-xl font-bold mb-3">Course Name</h2>
+        <h2 className="mb-3 text-xl font-bold">Course Name</h2>
         <ul className="list-decimal">
           {seletedData.map((item, idx) => (
             <li
